@@ -23,6 +23,13 @@ namespace Kata
             }
             
             var numbers = input.Split(delimiters, StringSplitOptions.None).Select(int.Parse).ToArray();
+            
+            var negativeNumbers = numbers.Where(n => n < 0).ToArray();
+
+            if (negativeNumbers.Length > 0)
+            {
+                throw new Exception($"negatives not allowed: {negativeNumbers[0]}");
+            }
 
             return numbers.Sum();
         }
