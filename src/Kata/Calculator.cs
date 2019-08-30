@@ -28,7 +28,7 @@ namespace Kata
 
             if (negativeNumbers.Length > 0)
             {
-                throw new Exception($"negatives not allowed: {negativeNumbers[0]}");
+                throw new Exception($"negatives not allowed: {string.Join(", ", negativeNumbers)}");
             }
 
             return numbers.Sum();
