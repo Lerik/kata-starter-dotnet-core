@@ -9,7 +9,14 @@ namespace Kata
                 return 0;
             }
 
-            return int.Parse(userInput);
+            var numbers = userInput.Split(',');
+
+            if (numbers.Length == 1)
+            {
+                return int.Parse(userInput);
+            }
+
+            return int.Parse(numbers[0]) + int.Parse(numbers[1]);
         }
     }
 }
