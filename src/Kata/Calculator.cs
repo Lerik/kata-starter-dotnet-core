@@ -10,19 +10,11 @@ namespace Kata
             if (input.Equals(""))
                 return 0;
 
-            var numbers = input.Split(',');
+            var numbers = input.Split(',')
+                .Select(n => Int32.Parse(n))
+                .ToArray();
 
-            if (numbers.Length == 1)
-                return Int32.Parse(numbers[0]);
-
-            var total = 0;
-
-            foreach (var number in numbers)
-            {
-                total += Int32.Parse(number);
-            }
-
-            return total;
+            return numbers.Sum();
         }
     }
 }
