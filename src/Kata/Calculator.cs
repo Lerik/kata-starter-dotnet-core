@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 
 namespace Kata
 {
@@ -14,7 +15,14 @@ namespace Kata
             if (numbers.Length == 1)
                 return Int32.Parse(numbers[0]);
 
-            return Int32.Parse(numbers[0]) + Int32.Parse(numbers[1]);
+            var total = 0;
+
+            foreach (var number in numbers)
+            {
+                total += Int32.Parse(number);
+            }
+
+            return total;
         }
     }
 }
