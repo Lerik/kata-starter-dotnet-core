@@ -4,7 +4,15 @@ namespace Kata
     {
         public int Add(string userInput)
         {
-            return 0;
+            if (string.IsNullOrEmpty(userInput))
+                return 0;
+
+            var numbers = userInput.Split(',');
+            
+            if (numbers.Length == 1)
+                return int.Parse(numbers[0]);
+
+            return int.Parse(numbers[0]) + int.Parse(numbers[1]);
         }
     }
 }
